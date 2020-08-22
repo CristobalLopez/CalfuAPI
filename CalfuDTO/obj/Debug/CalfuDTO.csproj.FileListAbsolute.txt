@@ -1,0 +1,5 @@
+c:\users\cristobal lopez\documents\visual studio 2015\Projects\CalfuWebApi\CalfuDTO\bin\Debug\CalfuDTO.dll
+c:\users\cristobal lopez\documents\visual studio 2015\Projects\CalfuWebApi\CalfuDTO\bin\Debug\CalfuDTO.pdb
+c:\users\cristobal lopez\documents\visual studio 2015\Projects\CalfuWebApi\CalfuDTO\obj\Debug\CalfuDTO.dll
+c:\users\cristobal lopez\documents\visual studio 2015\Projects\CalfuWebApi\CalfuDTO\obj\Debug\CalfuDTO.pdb
+C:\Users\Cristobal Lopez\Documents\Visual Studio 2015\Projects\CalfuWebApi\CalfuDTO\obj\Debug\CalfuDTO.csprojResolveAssemblyReference.cache

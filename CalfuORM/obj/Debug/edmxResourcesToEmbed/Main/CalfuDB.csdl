@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CalfuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="COMENTARIO">
+    <Key>
+      <PropertyRef Name="COMENTARIO_ID" />
+    </Key>
+    <Property Name="COMENTARIO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMENTARIO_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VIEWER_NICKNAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OBRA_ID" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_COM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HORA_COM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MAIN_CONFIG">
+    <Key>
+      <PropertyRef Name="MAIN_ID" />
+    </Key>
+    <Property Name="MAIN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FACEBOOK_LINK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="INSTAGRAM_LINK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ME_GUSTA">
+    <Key>
+      <PropertyRef Name="MEGUSTA_ID" />
+    </Key>
+    <Property Name="MEGUSTA_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VIEWER_NICKNAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OBRA_ID" Type="Int32" Nullable="false" />
+    <Property Name="MEGUSTA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OBRA_MSTR">
+    <Key>
+      <PropertyRef Name="OBRA_ID" />
+    </Key>
+    <Property Name="OBRA_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FILE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ALIAS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LARGO" Type="Decimal" Precision="18" Scale="9" Nullable="false" />
+    <Property Name="ANCHO" Type="Decimal" Precision="18" Scale="9" Nullable="false" />
+    <Property Name="TIPO_OBRA_ID" Type="Int32" Nullable="false" />
+    <Property Name="ME_GUSTA" Type="Int32" Nullable="false" />
+    <Property Name="NO_ME_GUSTA" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPO_OBRA">
+    <Key>
+      <PropertyRef Name="TIPO_OBRA_ID" />
+    </Key>
+    <Property Name="TIPO_OBRA_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIPO_DESC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CalfuEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="COMENTARIO" EntityType="Self.COMENTARIO" />
+    <EntitySet Name="MAIN_CONFIG" EntityType="Self.MAIN_CONFIG" />
+    <EntitySet Name="ME_GUSTA" EntityType="Self.ME_GUSTA" />
+    <EntitySet Name="OBRA_MSTR" EntityType="Self.OBRA_MSTR" />
+    <EntitySet Name="TIPO_OBRA" EntityType="Self.TIPO_OBRA" />
+    <EntitySet Name="USER_MSTR" EntityType="CalfuModel.USER_MSTR" />
+  </EntityContainer>
+  <EntityType Name="USER_MSTR">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="USER_PASS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="USER_NICK" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

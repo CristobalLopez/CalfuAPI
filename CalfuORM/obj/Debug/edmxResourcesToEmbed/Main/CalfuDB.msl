@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CalfuModelStoreContainer" CdmEntityContainer="CalfuEntities">
+    <EntitySetMapping Name="COMENTARIO">
+      <EntityTypeMapping TypeName="CalfuModel.COMENTARIO">
+        <MappingFragment StoreEntitySet="COMENTARIO">
+          <ScalarProperty Name="COMENTARIO_ID" ColumnName="COMENTARIO_ID" />
+          <ScalarProperty Name="COMENTARIO_DESC" ColumnName="COMENTARIO_DESC" />
+          <ScalarProperty Name="VIEWER_NICKNAME" ColumnName="VIEWER_NICKNAME" />
+          <ScalarProperty Name="OBRA_ID" ColumnName="OBRA_ID" />
+          <ScalarProperty Name="FECHA_COM" ColumnName="FECHA_COM" />
+          <ScalarProperty Name="HORA_COM" ColumnName="HORA_COM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAIN_CONFIG">
+      <EntityTypeMapping TypeName="CalfuModel.MAIN_CONFIG">
+        <MappingFragment StoreEntitySet="MAIN_CONFIG">
+          <ScalarProperty Name="MAIN_ID" ColumnName="MAIN_ID" />
+          <ScalarProperty Name="FACEBOOK_LINK" ColumnName="FACEBOOK_LINK" />
+          <ScalarProperty Name="INSTAGRAM_LINK" ColumnName="INSTAGRAM_LINK" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ME_GUSTA">
+      <EntityTypeMapping TypeName="CalfuModel.ME_GUSTA">
+        <MappingFragment StoreEntitySet="ME_GUSTA">
+          <ScalarProperty Name="MEGUSTA_ID" ColumnName="MEGUSTA_ID" />
+          <ScalarProperty Name="VIEWER_NICKNAME" ColumnName="VIEWER_NICKNAME" />
+          <ScalarProperty Name="OBRA_ID" ColumnName="OBRA_ID" />
+          <ScalarProperty Name="MEGUSTA" ColumnName="MEGUSTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OBRA_MSTR">
+      <EntityTypeMapping TypeName="CalfuModel.OBRA_MSTR">
+        <MappingFragment StoreEntitySet="OBRA_MSTR">
+          <ScalarProperty Name="OBRA_ID" ColumnName="OBRA_ID" />
+          <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+          <ScalarProperty Name="ALIAS" ColumnName="ALIAS" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="LARGO" ColumnName="LARGO" />
+          <ScalarProperty Name="ANCHO" ColumnName="ANCHO" />
+          <ScalarProperty Name="TIPO_OBRA_ID" ColumnName="TIPO_OBRA_ID" />
+          <ScalarProperty Name="ME_GUSTA" ColumnName="ME_GUSTA" />
+          <ScalarProperty Name="NO_ME_GUSTA" ColumnName="NO_ME_GUSTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_OBRA">
+      <EntityTypeMapping TypeName="CalfuModel.TIPO_OBRA">
+        <MappingFragment StoreEntitySet="TIPO_OBRA">
+          <ScalarProperty Name="TIPO_OBRA_ID" ColumnName="TIPO_OBRA_ID" />
+          <ScalarProperty Name="TIPO_DESC" ColumnName="TIPO_DESC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_MSTR">
+      <EntityTypeMapping TypeName="CalfuModel.USER_MSTR">
+        <MappingFragment StoreEntitySet="USER_MSTR">
+          <ScalarProperty Name="USER_NICK" ColumnName="USER_NICK" />
+          <ScalarProperty Name="USER_PASS" ColumnName="USER_PASS" />
+          <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CalfuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="COMENTARIO">
+    <Key>
+      <PropertyRef Name="COMENTARIO_ID" />
+    </Key>
+    <Property Name="COMENTARIO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COMENTARIO_DESC" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="VIEWER_NICKNAME" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="OBRA_ID" Type="int" Nullable="false" />
+    <Property Name="FECHA_COM" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="HORA_COM" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MAIN_CONFIG">
+    <Key>
+      <PropertyRef Name="MAIN_ID" />
+    </Key>
+    <Property Name="MAIN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FACEBOOK_LINK" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="INSTAGRAM_LINK" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ME_GUSTA">
+    <Key>
+      <PropertyRef Name="MEGUSTA_ID" />
+    </Key>
+    <Property Name="MEGUSTA_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VIEWER_NICKNAME" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="OBRA_ID" Type="int" Nullable="false" />
+    <Property Name="MEGUSTA" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OBRA_MSTR">
+    <Key>
+      <PropertyRef Name="OBRA_ID" />
+    </Key>
+    <Property Name="OBRA_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FILE_NAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ALIAS" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="LARGO" Type="decimal" Precision="18" Scale="9" Nullable="false" />
+    <Property Name="ANCHO" Type="decimal" Precision="18" Scale="9" Nullable="false" />
+    <Property Name="TIPO_OBRA_ID" Type="int" Nullable="false" />
+    <Property Name="ME_GUSTA" Type="int" Nullable="false" />
+    <Property Name="NO_ME_GUSTA" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIPO_OBRA">
+    <Key>
+      <PropertyRef Name="TIPO_OBRA_ID" />
+    </Key>
+    <Property Name="TIPO_OBRA_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIPO_DESC" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER_MSTR">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_NAME" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="USER_PASS" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="USER_NICK" Type="varchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CalfuModelStoreContainer">
+    <EntitySet Name="COMENTARIO" EntityType="Self.COMENTARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MAIN_CONFIG" EntityType="Self.MAIN_CONFIG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ME_GUSTA" EntityType="Self.ME_GUSTA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OBRA_MSTR" EntityType="Self.OBRA_MSTR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIPO_OBRA" EntityType="Self.TIPO_OBRA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_MSTR" EntityType="Self.USER_MSTR" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
