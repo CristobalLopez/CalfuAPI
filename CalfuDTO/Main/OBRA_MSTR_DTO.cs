@@ -17,5 +17,6 @@ namespace CalfuDTO.Main
         public int TIPO_OBRA_ID { get; set; }
         public int ME_GUSTA { get; set; }
         public int NO_ME_GUSTA { get; set; }
+        public int FLAG_VIGENTE { get; set; }
     }
 }

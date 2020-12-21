@@ -42,6 +42,7 @@
     <Property Name="TIPO_OBRA_ID" Type="int" Nullable="false" />
     <Property Name="ME_GUSTA" Type="int" Nullable="false" />
     <Property Name="NO_ME_GUSTA" Type="int" Nullable="false" />
+    <Property Name="FLAG_VIGENTE" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TIPO_OBRA">
     <Key>

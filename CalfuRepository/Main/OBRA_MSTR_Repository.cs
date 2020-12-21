@@ -19,31 +19,30 @@ namespace CalfuRepository.Main
         {
             try
             {
+                if (ReferenceEquals(context, null)) context = new CalfuEntities();
 
+                OBRA_MSTR obraMstr = context.OBRA_MSTR.Where(x => x.OBRA_ID.Equals(dto.OBRA_ID)).SingleOrDefault();
+
+                if (!ReferenceEquals(null, obraMstr))
+                {
+
+                    obraMstr.ALIAS = dto.ALIAS;
+                    obraMstr.ANCHO = dto.ANCHO;
+                    obraMstr.DESCRIPCION = dto.DESCRIPCION;
+                    obraMstr.FILE_NAME = dto.FILE_NAME;
+                    obraMstr.ME_GUSTA = dto.ME_GUSTA;
+                    obraMstr.NO_ME_GUSTA = dto.NO_ME_GUSTA;
+                    obraMstr.TIPO_OBRA_ID = dto.TIPO_OBRA_ID;
+                    context.SaveChanges();
+                }
+                context.SaveChanges();
+                return true;
             }
             catch (Exception ex)
             {
-
-                throw;
+                return false;
             }
-            if (ReferenceEquals(context, null)) context = new CalfuEntities();
-
-            OBRA_MSTR obraMstr = context.OBRA_MSTR.Where(x => x.OBRA_ID.Equals(dto.OBRA_ID)).SingleOrDefault();
-
-            if (!ReferenceEquals(null, obraMstr))
-            {
-
-                obraMstr.ALIAS = dto.ALIAS;
-                obraMstr.ANCHO = dto.ANCHO;
-                obraMstr.DESCRIPCION = dto.DESCRIPCION;
-                obraMstr.FILE_NAME = dto.FILE_NAME;
-                obraMstr.ME_GUSTA = dto.ME_GUSTA;
-                obraMstr.NO_ME_GUSTA = dto.NO_ME_GUSTA;
-                obraMstr.TIPO_OBRA_ID = dto.TIPO_OBRA_ID;
-                context.SaveChanges();
-            }
-            context.SaveChanges();
-            return true;
+            
         }
 
         public bool CreateObraMstr(OBRA_MSTR_DTO dto)
@@ -104,6 +103,7 @@ namespace CalfuRepository.Main
                 getObraMstrDto.ME_GUSTA = _obraMstr.ME_GUSTA;
                 getObraMstrDto.NO_ME_GUSTA = _obraMstr.NO_ME_GUSTA;
                 getObraMstrDto.TIPO_OBRA_ID = _obraMstr.TIPO_OBRA_ID;
+                getObraMstrDto.FLAG_VIGENTE = _obraMstr.FLAG_VIGENTE;
 
                 //OBRA_MSTR_DTO getObraMstrDto = context.OBRA_MSTR.Where(x => x.OBRA_ID.Equals(id)).ProjectTo<OBRA_MSTR_DTO>().FirstOrDefault();
 
@@ -125,6 +125,9 @@ namespace CalfuRepository.Main
                 if (ReferenceEquals(context, null)) context = new CalfuEntities();
 
                 _listObraMstrDtos = (from obraMstrbd in context.OBRA_MSTR
+                                         //join tipoObrabd in context.TIPO_OBRA
+                                         //on obraMstrbd.TIPO_OBRA_ID equals tipoObrabd.TIPO_OBRA_ID
+                                     where obraMstrbd.FLAG_VIGENTE == 1
                                      select new OBRA_MSTR_DTO
                                      {
                                          OBRA_ID = obraMstrbd.OBRA_ID,
@@ -134,7 +137,8 @@ namespace CalfuRepository.Main
                                          FILE_NAME = obraMstrbd.FILE_NAME,
                                          ME_GUSTA = obraMstrbd.ME_GUSTA,
                                          NO_ME_GUSTA = obraMstrbd.NO_ME_GUSTA,
-                                         TIPO_OBRA_ID = obraMstrbd.TIPO_OBRA_ID
+                                         TIPO_OBRA_ID = obraMstrbd.TIPO_OBRA_ID,
+                                         FLAG_VIGENTE = obraMstrbd.FLAG_VIGENTE
                                      }).OrderBy(x => x.OBRA_ID).ToList();
                 return _listObraMstrDtos;
             }
@@ -157,7 +161,9 @@ namespace CalfuRepository.Main
 
                 if (!ReferenceEquals(obraMstr, null))
                 {
-                    context.OBRA_MSTR.Remove(obraMstr);
+                    obraMstr.FLAG_VIGENTE = 2;
+                    context.SaveChanges();
+                    //context.OBRA_MSTR.Remove(obraMstr);
                     return true;
                 }
                 else
@@ -181,6 +187,7 @@ namespace CalfuRepository.Main
                 if (ReferenceEquals(context, null)) context = new CalfuEntities();
 
                 _listObraMstrDtos = (from obraMstrbd in context.OBRA_MSTR
+                                     where obraMstrbd.FLAG_VIGENTE==1
                                      select new OBRA_MSTR_DTO
                                      {
                                          OBRA_ID = obraMstrbd.OBRA_ID,

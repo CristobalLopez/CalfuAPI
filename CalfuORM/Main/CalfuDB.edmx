@@ -47,6 +47,7 @@
           <Property Name="TIPO_OBRA_ID" Type="int" Nullable="false" />
           <Property Name="ME_GUSTA" Type="int" Nullable="false" />
           <Property Name="NO_ME_GUSTA" Type="int" Nullable="false" />
+          <Property Name="FLAG_VIGENTE" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TIPO_OBRA">
           <Key>
@@ -105,20 +106,6 @@
           <Property Name="OBRA_ID" Type="Int32" Nullable="false" />
           <Property Name="MEGUSTA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityType Name="OBRA_MSTR">
-          <Key>
-            <PropertyRef Name="OBRA_ID" />
-          </Key>
-          <Property Name="OBRA_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FILE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ALIAS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DESCRIPCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LARGO" Type="Decimal" Precision="18" Scale="9" Nullable="false" />
-          <Property Name="ANCHO" Type="Decimal" Precision="18" Scale="9" Nullable="false" />
-          <Property Name="TIPO_OBRA_ID" Type="Int32" Nullable="false" />
-          <Property Name="ME_GUSTA" Type="Int32" Nullable="false" />
-          <Property Name="NO_ME_GUSTA" Type="Int32" Nullable="false" />
-        </EntityType>
         <EntityType Name="TIPO_OBRA">
           <Key>
             <PropertyRef Name="TIPO_OBRA_ID" />
@@ -130,9 +117,9 @@
           <EntitySet Name="COMENTARIO" EntityType="Self.COMENTARIO" />
           <EntitySet Name="MAIN_CONFIG" EntityType="Self.MAIN_CONFIG" />
           <EntitySet Name="ME_GUSTA" EntityType="Self.ME_GUSTA" />
-          <EntitySet Name="OBRA_MSTR" EntityType="Self.OBRA_MSTR" />
           <EntitySet Name="TIPO_OBRA" EntityType="Self.TIPO_OBRA" />
           <EntitySet Name="USER_MSTR" EntityType="CalfuModel.USER_MSTR" />
+          <EntitySet Name="OBRA_MSTR" EntityType="CalfuModel.OBRA_MSTR" />
         </EntityContainer>
         <EntityType Name="USER_MSTR">
           <Key>
@@ -142,6 +129,21 @@
           <Property Name="USER_NAME" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="USER_PASS" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="USER_NICK" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OBRA_MSTR">
+          <Key>
+            <PropertyRef Name="OBRA_ID" />
+          </Key>
+          <Property Name="OBRA_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FILE_NAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ALIAS" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="LARGO" Type="Decimal" Nullable="false" Precision="18" Scale="9" />
+          <Property Name="ANCHO" Type="Decimal" Nullable="false" Precision="18" Scale="9" />
+          <Property Name="TIPO_OBRA_ID" Type="Int32" Nullable="false" />
+          <Property Name="ME_GUSTA" Type="Int32" Nullable="false" />
+          <Property Name="NO_ME_GUSTA" Type="Int32" Nullable="false" />
+          <Property Name="FLAG_VIGENTE" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -181,21 +183,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="OBRA_MSTR">
-            <EntityTypeMapping TypeName="CalfuModel.OBRA_MSTR">
-              <MappingFragment StoreEntitySet="OBRA_MSTR">
-                <ScalarProperty Name="OBRA_ID" ColumnName="OBRA_ID" />
-                <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
-                <ScalarProperty Name="ALIAS" ColumnName="ALIAS" />
-                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-                <ScalarProperty Name="LARGO" ColumnName="LARGO" />
-                <ScalarProperty Name="ANCHO" ColumnName="ANCHO" />
-                <ScalarProperty Name="TIPO_OBRA_ID" ColumnName="TIPO_OBRA_ID" />
-                <ScalarProperty Name="ME_GUSTA" ColumnName="ME_GUSTA" />
-                <ScalarProperty Name="NO_ME_GUSTA" ColumnName="NO_ME_GUSTA" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TIPO_OBRA">
             <EntityTypeMapping TypeName="CalfuModel.TIPO_OBRA">
               <MappingFragment StoreEntitySet="TIPO_OBRA">
@@ -211,6 +198,22 @@
                 <ScalarProperty Name="USER_PASS" ColumnName="USER_PASS" />
                 <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
                 <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OBRA_MSTR">
+            <EntityTypeMapping TypeName="CalfuModel.OBRA_MSTR">
+              <MappingFragment StoreEntitySet="OBRA_MSTR">
+                <ScalarProperty Name="FLAG_VIGENTE" ColumnName="FLAG_VIGENTE" />
+                <ScalarProperty Name="NO_ME_GUSTA" ColumnName="NO_ME_GUSTA" />
+                <ScalarProperty Name="ME_GUSTA" ColumnName="ME_GUSTA" />
+                <ScalarProperty Name="TIPO_OBRA_ID" ColumnName="TIPO_OBRA_ID" />
+                <ScalarProperty Name="ANCHO" ColumnName="ANCHO" />
+                <ScalarProperty Name="LARGO" ColumnName="LARGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ALIAS" ColumnName="ALIAS" />
+                <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+                <ScalarProperty Name="OBRA_ID" ColumnName="OBRA_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

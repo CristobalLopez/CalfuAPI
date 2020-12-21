@@ -28,8 +28,8 @@ namespace CalfuORM.Main
         public virtual DbSet<COMENTARIO> COMENTARIO { get; set; }
         public virtual DbSet<MAIN_CONFIG> MAIN_CONFIG { get; set; }
         public virtual DbSet<ME_GUSTA> ME_GUSTA { get; set; }
-        public virtual DbSet<OBRA_MSTR> OBRA_MSTR { get; set; }
         public virtual DbSet<TIPO_OBRA> TIPO_OBRA { get; set; }
         public virtual DbSet<USER_MSTR> USER_MSTR { get; set; }
+        public virtual DbSet<OBRA_MSTR> OBRA_MSTR { get; set; }
     }
 }

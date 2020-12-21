@@ -65,16 +65,18 @@ namespace CalfuWebApi.Controllers.Main
             return Ok(retorno);
         }
 
-        [HttpDelete]
-        [Route("api/DeleteUser/")]
-        public IHttpActionResult DeleteUser(int id)
+        [HttpGet]
+        [Route("api/RemoveObra/")]
+        public string RemoveObra(int id)
         {
             string retorno = "";
+            //int obraid = 0;
+            //int.TryParse(id, out obraid);
             _obraMstrRepository = new OBRA_MSTR_Repository();
 
             retorno = _obraMstrRepository.DeleteObraMstrRepository(id) ? "Exito" : "Error";
 
-            return Ok(retorno);
+            return retorno;
         }
 
         [HttpGet]

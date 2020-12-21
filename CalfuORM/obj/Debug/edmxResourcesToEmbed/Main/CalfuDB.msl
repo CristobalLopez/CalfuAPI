@@ -33,21 +33,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="OBRA_MSTR">
-      <EntityTypeMapping TypeName="CalfuModel.OBRA_MSTR">
-        <MappingFragment StoreEntitySet="OBRA_MSTR">
-          <ScalarProperty Name="OBRA_ID" ColumnName="OBRA_ID" />
-          <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
-          <ScalarProperty Name="ALIAS" ColumnName="ALIAS" />
-          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-          <ScalarProperty Name="LARGO" ColumnName="LARGO" />
-          <ScalarProperty Name="ANCHO" ColumnName="ANCHO" />
-          <ScalarProperty Name="TIPO_OBRA_ID" ColumnName="TIPO_OBRA_ID" />
-          <ScalarProperty Name="ME_GUSTA" ColumnName="ME_GUSTA" />
-          <ScalarProperty Name="NO_ME_GUSTA" ColumnName="NO_ME_GUSTA" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TIPO_OBRA">
       <EntityTypeMapping TypeName="CalfuModel.TIPO_OBRA">
         <MappingFragment StoreEntitySet="TIPO_OBRA">
@@ -63,6 +48,22 @@
           <ScalarProperty Name="USER_PASS" ColumnName="USER_PASS" />
           <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
           <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OBRA_MSTR">
+      <EntityTypeMapping TypeName="CalfuModel.OBRA_MSTR">
+        <MappingFragment StoreEntitySet="OBRA_MSTR">
+          <ScalarProperty Name="FLAG_VIGENTE" ColumnName="FLAG_VIGENTE" />
+          <ScalarProperty Name="NO_ME_GUSTA" ColumnName="NO_ME_GUSTA" />
+          <ScalarProperty Name="ME_GUSTA" ColumnName="ME_GUSTA" />
+          <ScalarProperty Name="TIPO_OBRA_ID" ColumnName="TIPO_OBRA_ID" />
+          <ScalarProperty Name="ANCHO" ColumnName="ANCHO" />
+          <ScalarProperty Name="LARGO" ColumnName="LARGO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ALIAS" ColumnName="ALIAS" />
+          <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+          <ScalarProperty Name="OBRA_ID" ColumnName="OBRA_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
