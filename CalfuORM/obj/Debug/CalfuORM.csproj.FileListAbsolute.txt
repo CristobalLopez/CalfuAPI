@@ -10,3 +10,15 @@ c:\users\cristobal lopez\documents\visual studio 2015\Projects\CalfuWebApi\Calfu
 c:\users\cristobal lopez\documents\visual studio 2015\Projects\CalfuWebApi\CalfuORM\obj\Debug\CalfuORM.dll
 c:\users\cristobal lopez\documents\visual studio 2015\Projects\CalfuWebApi\CalfuORM\obj\Debug\CalfuORM.pdb
 C:\Users\Cristobal Lopez\Documents\Visual Studio 2015\Projects\CalfuWebApi\CalfuORM\obj\Debug\CalfuORM.csprojResolveAssemblyReference.cache
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\bin\Debug\CalfuORM.dll.config
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\bin\Debug\CalfuORM.dll
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\bin\Debug\CalfuORM.pdb
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\bin\Debug\EntityFramework.dll
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\bin\Debug\EntityFramework.xml
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\obj\Debug\CalfuORM.csprojResolveAssemblyReference.cache
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\obj\Debug\CalfuORM.dll
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuORM\obj\Debug\CalfuORM.pdb

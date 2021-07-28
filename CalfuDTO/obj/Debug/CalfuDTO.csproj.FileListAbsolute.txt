@@ -3,3 +3,8 @@ c:\users\cristobal lopez\documents\visual studio 2015\Projects\CalfuWebApi\Calfu
 c:\users\cristobal lopez\documents\visual studio 2015\Projects\CalfuWebApi\CalfuDTO\obj\Debug\CalfuDTO.dll
 c:\users\cristobal lopez\documents\visual studio 2015\Projects\CalfuWebApi\CalfuDTO\obj\Debug\CalfuDTO.pdb
 C:\Users\Cristobal Lopez\Documents\Visual Studio 2015\Projects\CalfuWebApi\CalfuDTO\obj\Debug\CalfuDTO.csprojResolveAssemblyReference.cache
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuDTO\bin\Debug\CalfuDTO.dll
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuDTO\bin\Debug\CalfuDTO.pdb
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuDTO\obj\Debug\CalfuDTO.csprojResolveAssemblyReference.cache
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuDTO\obj\Debug\CalfuDTO.dll
+C:\Users\CRIST\Downloads\Project\Net\CalfuAPI\CalfuDTO\obj\Debug\CalfuDTO.pdb
